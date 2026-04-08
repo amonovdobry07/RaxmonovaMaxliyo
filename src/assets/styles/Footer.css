@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+/* Asosiy footer konteyneri */
+.w-full {
+  width: 100%;
+  padding: 32px 16px; /* py-8 px-4 */
+  border-top: 1px solid #e5e7eb; /* border-gray-200 */
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Ichki elementlarni tartiblash */
+.max-w-7xl {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column; /* Mobil uchun ustma-ust */
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px; /* gap-6 */
+}
+
+/* Kompyuter ekrani uchun (768px dan yuqori) */
+@media (min-width: 768px) {
+  .w-full {
+    padding-left: 48px; /* md:px-12 */
+    padding-right: 48px;
+  }
+  
+  .max-w-7xl {
+    flex-direction: row; /* Elementlarni bir qatorga terish */
+  }
+
+  .text-center {
+    text-align: left; /* md:text-left */
+  }
+}
+
+/* 1. Ijtimoiy tarmoqlar */
+.flex.items-center.gap-6 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.text-gray-800 a {
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.hover\:text-blue-400:hover { color: #60a5fa; }
+.hover\:text-blue-600:hover { color: #2563eb; }
+.hover\:text-gray-600:hover { color: #4b5563; }
+
+/* 2. Copyright matni */
+.text-gray-900 {
+  color: #111827;
+  font-weight: 500;
+  font-size: 14px; /* text-sm */
+}
+
+@media (min-width: 640px) {
+  .text-gray-900, .text-sm {
+    font-size: 16px; /* sm:text-base */
+    font-weight: 700;
+  }
+}
+
+/* 3. Brend/Pixpa qismi */
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.text-black {
+  color: #000000;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px; /* underline-offset-4 */
+  transition: color 0.2s ease;
+}
+
+.text-black:hover {
+  color: #374151; /* hover:text-gray-700 */
+}

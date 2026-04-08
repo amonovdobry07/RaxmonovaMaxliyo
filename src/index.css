@@ -1,0 +1,165 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html{
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* Umumiy sozlamalar */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+
+
+
+body {
+  font-family: "Poiret One", sans-serif !important;
+  background-color: #ffffff;
+}
+
+/* =========================================
+   NAVBAR STYLES
+   ========================================= */
+.navbar {
+  position: absolute; /* Rasm ustida turishi uchun */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.navbar-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-social a {
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-social a:hover {
+  opacity: 0.7;
+}
+
+/* Home sahifasi uchun (Shaffof va Oq tekst) */
+.navbar-transparent {
+  background-color: transparent;
+}
+
+.navbar-transparent .navbar-logo a,
+.navbar-transparent .navbar-links a,
+.navbar-transparent .navbar-social a {
+  color: #ffffff;
+}
+
+.navbar-transparent .navbar-links a.active,
+.navbar-transparent .navbar-links a:hover {
+  border-bottom-color: #ffffff;
+}
+
+/* Boshqa sahifalar uchun (Oq fon va Qora tekst) */
+.navbar-solid {
+  background-color: #ffffff;
+  position: relative; /* Boshqa sahifalarda rasm ustida turmaydi */
+  border-bottom: 1px solid #eeeeee;
+}
+
+.navbar-solid .navbar-logo a,
+.navbar-solid .navbar-links a,
+.navbar-solid .navbar-social a {
+  color: #000000;
+}
+
+.navbar-solid .navbar-links a.active,
+.navbar-solid .navbar-links a:hover {
+  border-bottom-color: #000000;
+}
+
+/* =========================================
+   HOME PAGE STYLES
+   ========================================= */
+.home-container {
+  width: 100%;
+}
+
+.hero-section {
+  width: 100%;
+  height: 90vh; /* Rasm ekranning 90% ini egallaydi */
+  /* BU YERGA O'ZINGIZNING RASMINGIZNI QO'YING */
+  background-image: url('https://images.unsplash.com/photo-1536924940846-227afb31e2a5?q=80&w=2066&auto=format&fit=crop'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Rasm ustiga qora overlay berish (yozuvlar aniq ko'rinishi uchun) */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Qoralik darajasini o'zgartirishingiz mumkin */
+  z-index: 1;
+}
+
+.title-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.title-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: -1px;
+}
+
+/* =========================================
+   PLACEHOLDER (Boshqa sahifalar uchun)
+   ========================================= */
+.page-placeholder {
+  padding: 5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+}

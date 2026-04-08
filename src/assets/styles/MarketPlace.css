@@ -1,0 +1,202 @@
+/* ====================================
+   PREMIUM MARKET HUB (Bento Design)
+   ==================================== */
+.premium-hub-section {
+  position: relative;
+  padding: 8rem 4rem;
+  background-color: #f8f9fa; /* Juda ochiq kulrang, toza fon */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Orqa fondagi katta xira shar (Premium yoritish) */
+.premium-hub-bg {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0,0,0,0.02) 0%, rgba(255,255,255,0) 70%);
+  z-index: 0;
+}
+
+.premium-hub-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.premium-hub-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.hub-badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: #ffffff;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+}
+
+.premium-hub-header h2 {
+  font-family: 'Lora', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #111;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.premium-hub-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ====================================
+   BENTO GRID KARTALARI
+   ==================================== */
+.bento-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 katta bloklar */
+  gap: 2rem;
+}
+
+.bento-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px; /* Kattaroq yumaloqlik */
+  padding: 3rem;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Hover qilinganda karta biroz ko'tariladi */
+.bento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* KARTA ORQA FONIDAGI NUR (GLOW EFFECT) */
+.bento-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  filter: blur(80px); /* Nurni yoyib yuborish */
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 0;
+}
+
+.bento-card:hover .bento-glow {
+  opacity: 0.6; /* Hoverda o'ziga xos nur chiqadi */
+  transform: translate(-50%, -50%) scale(2); /* Nur kattalashadi */
+}
+
+/* Karta ichidagi kontent */
+.bento-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bento-logo-wrapper {
+  width: 100px;
+  height: 100px;
+  background: #ffffff; /* Logoning orqasi oq bo'lib turadi */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  margin-bottom: 2rem;
+  transition: transform 0.5s ease;
+}
+
+.bento-card:hover .bento-logo-wrapper {
+  transform: scale(1.08); /* Logo hoverda kattalashadi */
+}
+
+.bento-logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bento-text h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 0.8rem;
+}
+
+/* "Mahsulotlarni ko'rish ->" yozuvi */
+.bento-link-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Hover bo'lganda o'q belgisi o'ngga siljiydi */
+.bento-card:hover .bento-link-text {
+  color: #111;
+}
+
+.bento-card:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* ====================================
+   MOBIL MOSLASHUV
+   ==================================== */
+@media screen and (max-width: 1024px) {
+  .premium-hub-header h2 { font-size: 2.8rem; }
+  .bento-cards-grid { gap: 1.5rem; }
+  .bento-card { padding: 2rem; }
+}
+
+@media screen and (max-width: 768px) {
+  .premium-hub-section { padding: 5rem 2rem; }
+  .premium-hub-header h2 { font-size: 2.2rem; }
+  .bento-cards-grid { grid-template-columns: 1fr; /* Telefonda tagma tag */ }
+  .bento-logo-wrapper { width: 80px; height: 80px; padding: 1rem; }
+}

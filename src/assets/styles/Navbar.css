@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+/* =========================================
+   ASOSIY NAVBAR (Oldingi kodlar)
+   ========================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.8rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-logo {
+  z-index: 1100; /* Menyu ochilganda logo ko'rinib turishi uchun */
+}
+
+/* Logo rasmi uchun maxsus stil */
+.navbar-logo img {
+  height: 50px; /* Logoning balandligi. O'zingizning logongizga qarab bu raqamni kattalashtiring yoki kichiklashtiring (masalan 40px yoki 60px) */
+  width: auto;  /* Rasmning proporsiyasi (eni va bo'yi nisbati) buzilmasligi uchun */
+  display: block;
+  object-fit: contain; /* Rasm qirqilib ketmasligi uchun */
+  transition: transform 0.3s ease; /* Ustiga borganda mayin ishlashi uchun */
+}
+
+/* (Ixtiyoriy) Sichqoncha logoning ustiga borganda biroz kattalashishi uchun */
+.navbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Poiret One", sans-serif !important;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+.navbar-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-social a {
+  font-size: 1.2rem;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.navbar-social a:hover {
+  transform: translateY(-3px);
+  opacity: 0.8;
+}
+
+/* =========================================
+   HOLATLAR (Shaffof va Qattiq)
+   ========================================= */
+.navbar-transparent {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding: 2.5rem 4rem;
+}
+
+.navbar-transparent .navbar-logo a,
+.navbar-transparent .navbar-links a,
+.navbar-transparent .navbar-social a,
+.navbar-transparent .menu-icon {
+  color: #ffffff;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.9),
+    0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-solid {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.2rem 4rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-solid .navbar-logo a,
+.navbar-solid .navbar-links a,
+.navbar-solid .navbar-social a,
+.navbar-solid .menu-icon {
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+/* =========================================
+   MOBIL VERSIYA (PRO RESPONSIVE)
+   ========================================= */
+
+/* Desktopda mobil elementlarni yashirish */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1100; /* Menyudan tepada turishi kerak */
+  transition: transform 0.3s ease;
+}
+.mobile-socials {
+  display: none;
+}
+
+/* Tablet va Mobil telefonlar uchun (768px va undan kichik) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1.2rem 2rem; /* Yonlardan paddingni qisqartiramiz */
+  }
+
+  .navbar-transparent {
+    padding: 1.5rem 2rem;
+  }
+
+  /* Desktop ikonkalarni yashiramiz */
+  .desktop-socials {
+    display: none;
+  }
+
+  /* Burger menyuni ko'rsatamiz */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Mobil menyu (Slide-in Right Effect) */
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Ekranning o'ng tomonida yashirinib turadi */
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.98); /* Oq glassmorphism */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); /* Silliq kirib kelish */
+    z-index: 1050;
+  }
+
+  /* Menyu ochiq holatda ekranga tushadi */
+  .navbar-links.active {
+    right: 0;
+  }
+
+  /* Mobil menyudagi yozuvlar dizayni */
+  .navbar-links a {
+    color: #1a1a1a !important; /* Shaffof holatda ham menyu ichi oq fonda qora bo'lishi kerak */
+    font-size: 1.5rem;
+    text-shadow: none !important;
+  }
+
+  .navbar-links a::after {
+    height: 3px; /* Mobilda chiziq biroz qalinroq */
+  }
+
+  /* Mobil menyu ichidagi ijtimoiy tarmoqlar */
+  .mobile-socials {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .mobile-socials a {
+    color: #1a1a1a !important;
+    font-size: 1.5rem;
+    text-shadow: none !important;
+  }
+}
+
+/* ... Sizning oldingi navbar va navbar-links kodlaringiz ... */
+
+/* =========================================
+   TIL ALMASHTIRGICH (DESKTOP)
+   ========================================= */
+.desktop-lang {
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: "Poiret One", sans-serif;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.lang-toggle:hover {
+  opacity: 0.7;
+}
+
+/* Zamonaviy Dropdown menyu */
+.lang-dropdown {
+  position: absolute;
+  top: 150%;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-width: 80px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.lang-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  padding: 0.8rem 1.2rem;
+  color: #1a1a1a;
+  text-align: center;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-option:hover {
+  background-color: #f0f0f0;
+}
+
+.lang-option.selected {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* =========================================
+   HOLATLAR (Shaffof va Qattiq)
+   ========================================= */
+/* .navbar-transparent va .navbar-solid ichidagi ranglarni sozlash */
+
+.navbar-transparent .navbar-logo a,
+.navbar-transparent .navbar-links a,
+.navbar-transparent .menu-icon,
+.navbar-transparent .lang-toggle { /* Yozuv uchun qo'shildi */
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-solid .navbar-logo a,
+.navbar-solid .navbar-links a,
+.navbar-solid .menu-icon,
+.navbar-solid .lang-toggle { /* Yozuv uchun qo'shildi */
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+/* =========================================
+   MOBIL VERSIYA (PRO RESPONSIVE)
+   ========================================= */
+/* ... oldingi media query boshlanishi (logo, icon yashirish) ... */
+
+.mobile-langs {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* ... oldingi navbar, menu-icon, navbar-links active kodlari ... */
+
+  .desktop-lang {
+    display: none; /* Mobilda desktop dropdown yashiriladi */
+  }
+
+  /* Mobil menyu ichidagi til almashtirgich (Premium dizayn) */
+  .mobile-langs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .mobile-langs span {
+    font-family: "Poiret One", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 50px; /* Yumaloq (Pill) tugma effekti */
+    transition: all 0.3s ease;
+  }
+
+  .mobile-langs span.active-lang {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+}
+
+
+/* =========================================
+   NAVBAR ANIMATSIYASI (SAHIFA YUKLANGANDA)
+   ========================================= */
+
+/* 1. Asosiy Navbar tepadagi yashirinib turgan joyidan sekin tushib keladi */
+@keyframes slideDownNavbar {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Ichki elementlar (logo, yozuvlar) bir oz pastdan tepaga qalqib chiqadi */
+@keyframes fadeInNavbarItems {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbarga tushish animatsiyasini ulaymiz */
+.navbar {
+  animation: slideDownNavbar 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Elementlar boshida ko'rinmas turishi uchun opacity: 0 qilamiz
+   va ularga ketma-ketlik (delay) bilan animatsiya beramiz */
+
+.navbar-logo {
+  opacity: 0;
+  animation: fadeInNavbarItems 0.6s ease-out 0.3s forwards; /* 0.3s dan keyin boshlanadi */
+}
+
+.navbar-links {
+  opacity: 0;
+  animation: fadeInNavbarItems 0.6s ease-out 0.5s forwards; /* 0.5s dan keyin boshlanadi */
+}
+
+.desktop-lang, .menu-icon {
+  opacity: 0;
+  animation: fadeInNavbarItems 0.6s ease-out 0.7s forwards; /* eng oxirida paydo bo'ladi */
+}

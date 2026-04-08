@@ -1,0 +1,17 @@
+/* Asosiy o'rab turuvchi qism */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ekranning to'liq balandligini (100%) egallaydi */
+}
+
+/* Asosiy kontent qismi */
+.main-content {
+  flex: 1; /* Ekranda qolgan barcha bo'sh joyni o'ziga olib, footerni pastga itaradi */
+  width: 100%;
+}
+
+/* Boshqa sahifalarda Navbarni orqasida qolib ketmasligi uchun tepadan joy tashlash */
+.page-padding {
+  padding-top: 100px; /* Sizning Navbaringiz balandligiga qarab bu raqamni kattalashtiring yoki kichiklashtiring (masalan 80px yoki 120px) */
+}

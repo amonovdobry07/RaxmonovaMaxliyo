@@ -1,0 +1,197 @@
+/* ====================================
+   PREMIUM MARKET DETAILS (Ichki sahifa)
+   ==================================== */
+.market-details-section {
+  padding: 6rem 4rem;
+  background-color: #fbfcfd; /* Ko'zni charchatmaydigan o'ta och havorang-oq fon */
+  min-height: 100vh;
+}
+
+.market-details-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Orqaga qaytish tugmasi (Premium uslub) */
+.back-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 50px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #111;
+  border-color: #ccc;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transform: translateX(-4px); /* Silliq chapga siljiydi */
+}
+
+/* Magazin logosi va nomi qismi */
+.details-logo-wrapper {
+  margin-top: 2rem;
+}
+
+.details-logo-wrapper h2 {
+  font-family: 'Lora', serif;
+  font-size: 2.8rem;
+  color: #111;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.market-details-header p {
+  font-family: 'Inter', sans-serif;
+  color: #777;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* ====================================
+   MAHSULOTLAR GRIDI VA KARTALARI
+   ==================================== */
+.market-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktopda 4 ta ustun */
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Karta o'zi */
+.market-product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 20px; /* Yumaloq Apple-style burchaklar */
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.market-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Rasm qutisi */
+.img-wrapper {
+  width: 100%;
+  height: 280px; /* Barcha rasmlar bir xil balandlikda turadi */
+  overflow: hidden; /* Rasm kattalashganda qutidan chiqib ketmasligi uchun */
+  background-color: #f5f5f5;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rasmni qiyshaytirmasdan qutiga moslaydi */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hover bo'lganda rasm silliq yaqinlashadi */
+.market-product-card:hover .img-wrapper img {
+  transform: scale(1.08);
+}
+
+/* Matn va Tugma qismi */
+.product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Matn qismini to'liq to'ldirish uchun */
+}
+
+.product-info h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  color: #222;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.product-info p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  margin-top: auto; /* Narxni har doim pastga yopishtirib turadi */
+}
+
+/* "Sotib Olish" tugmasi */
+.buy-btn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Inline style orqali React'dan backgroundColor keladi, CSS esa unga soya qo'shadi */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.market-product-card:hover .buy-btn {
+  filter: brightness(0.95); /* Hoverda tugma rangi ozgina to'qlashadi */
+  transform: scale(0.98); /* Bosishga tayyor ekanini bildirib picha qisqaradi */
+}
+
+/* ====================================
+   MOBIL VA PLANSCHET UCHUN MOSLASHUV
+   ==================================== */
+@media screen and (max-width: 1200px) {
+  .market-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .market-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .market-details-section {
+    padding: 5rem 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .market-details-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .market-products-grid {
+    grid-template-columns: 1fr; /* Telefonda tagma-tag (1 ta karta) bo'ladi */
+  }
+
+  .back-btn {
+    position: relative;
+    margin-bottom: 2rem;
+    display: inline-flex;
+  }
+
+  .details-logo-wrapper h2 {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+.home-container {
+  width: 100%;
+}
+
+.hero-section {
+  width: 100%;
+  height: 75vh; /* 90vh o'rniga 100vh qildik, ekranni to'liq egallaydi */
+  background-image: url('../../assets/images/home_maxsulot_3.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Rasm ustiga qora qatlam (Vignette) yozuvlar tiniq ko'rinishi uchun */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 100%);
+  z-index: 1;
+}
+
+.title-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.title-section h1 {
+  font-family: "Lora", serif;
+  font-size: 5rem;
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+
+/* Sizning oldingi kodlaringiz shu yerda turadi ... */
+/* Rasm ustiga qora qatlam (Vignette) ... */
+/* .title-section h1 ...gacha o'z joyida qoladi */
+
+
+/* ==================================================
+   1. H1 UCHUN MOBIL MOSLASHUV (Responsive H1)
+   ================================================== */
+@media screen and (max-width: 1024px) {
+  .title-section h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-section h1 {
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title-section h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ==================================================
+   2. MAHSULOTLAR GALEREYASI (Pro Dizayn)
+   ================================================== */
+.products-section {
+  padding: 0 4rem 5rem 4rem; /* Tepasi title-section bilan birga oq turishi uchun 0 */
+  background-color: #fafafa;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktopda yonma-yon 4 ta */
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Karta o'zi (Sarg'ish-krem fon) */
+.product-card {
+  background-color: #f3efe9; /* Rasmdagiga mos ochiq fon */
+  padding: 1.2rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Hover qilinganda biroz tepaga chiqadi */
+}
+
+/* Rasm joylashgan quti (Oq fon bilan ramka yaratish) */
+.product-image-wrapper {
+  background-color: #ffffff;
+  padding: 1rem;
+  position: relative;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4; /* Rasmlar barchasi bir xil vertikal nisbatda turadi */
+  object-fit: cover;
+}
+
+/* "Sale" belgisi */
+.sale-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: #111;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px; /* Yumaloq qilingan shakl */
+  z-index: 2;
+}
+
+/* Matn qismi */
+.product-info {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.product-title {
+  font-family: "Lora", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+/* Narxlar bir qatorda turishi uchun */
+.product-price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.current-price {
+  font-weight: 600;
+  color: #111;
+  font-size: 0.95rem;
+}
+
+.old-price {
+  color: #555;
+  text-decoration: line-through; /* Ustidan chizish effekti */
+  font-size: 0.85rem;
+}
+
+/* ==================================================
+   3. MAHSULOTLAR UCHUN MOBIL MOSLASHUV
+   ================================================== */
+@media screen and (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr); /* Planshetda 3 ta */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .products-section {
+    padding: 0 2rem 4rem 2rem;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* Kichik planshet va katta telefonda 2 ta */
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .products-section {
+    padding: 0 1.5rem 3rem 1.5rem;
+  }
+  .products-grid {
+    grid-template-columns: 1fr; /* Telefonda tagma-tag (1 ta) */
+    gap: 2rem;
+  }
+  .product-card {
+    padding: 1rem;
+  }
+}
+
+
+/* ==================================================
+   4. MEET THE ARTIST SECTION (Hunarmand bilan tanishuv)
+   ================================================== */
+.about-artist-section {
+  padding: 6rem 4rem;
+  background-color: #ffffff; /* Oq toza fon */
+}
+
+.about-artist-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Rasm qismi (Chap tomon) */
+.about-artist-image {
+  flex: 1;
+  width: 100%;
+}
+
+.about-artist-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5; /* Vertikal portret formati */
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Pro darajadagi yengil soya */
+}
+
+/* Matn qismi (O'ng tomon) */
+.about-artist-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.artist-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.artist-title {
+  font-family: 'Lora', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #111;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.artist-bio {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* TUGMA DIZAYNI (Rasmdagi kabi silliq oq-qora tugma) */
+.btn-outline {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2.5rem;
+  border: 1px solid #111;
+  background-color: transparent;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: #111;
+  color: #ffffff;
+}
+
+/* ==================================================
+   MOBIL MOSLASHUV (Meet The Artist uchun)
+   ================================================== */
+@media screen and (max-width: 1024px) {
+  .about-artist-container {
+    gap: 3rem;
+  }
+  .artist-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-artist-section {
+    padding: 4rem 2rem;
+  }
+  .about-artist-container {
+    flex-direction: column; /* Mobilda rasm tepada, matn pastda bo'ladi */
+    gap: 3rem;
+  }
+  .about-artist-image {
+    width: 100%;
+  }
+  .artist-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-artist-section {
+    padding: 3rem 1.5rem;
+  }
+  .artist-title {
+    font-size: 1.8rem;
+  }
+  .btn-outline {
+    width: 100%; /* Telefonda tugma to'liq eniga cho'ziladi */
+    text-align: center;
+  }
+}
