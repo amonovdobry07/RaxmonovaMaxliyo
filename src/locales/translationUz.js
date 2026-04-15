@@ -64,8 +64,8 @@ const translationUz = {
     headerName: "RAHMANOVA MAXLIYO",
     marquee: "Tabiiy Jilo ★ O'zbekistonlik Iqtidorli Ijodkor ★ Nafis San'at", 
     heroTitle: "Kaminangiz Mahliyo",
-    desc1: "Faoliyatim – mantiqiy aniqlik va yuksak vizual san'at o'rtasidagi oltin oraliqni topishdir. Har bir loyihada toza arxitektura va sehrli realizm elementlarini nafislik bilan uyg'unlashtiraman.",
-    desc2: "Atrofimdagi fusunkor tabiat va raqamli olamning cheksiz imkoniyatlaridan ilhomlanib, izlanishlarimga interaktiv detallar, mukammal kompozitsiyalar va o'ziga xos vizual tasvirlarni singdiraman. Fikrimcha, ta'sirchan loyiha murakkablikka ehtiyoj sezmaydi — yuksak did bilan yaratilgan mitti detal, nafis vizual chizgi yoki mukammal yozilgan birgina mantiqiy qator butun bir olamni yoritib berishga qodir.",
+desc1: "Mening ijodim – qadimiy milliy an'analar va zamonaviy interyer yechimlari o'rtasidagi oltin muvozanatni topishdan iborat. Har bir yaratgan ko'rpa va ko'rpachalarimda yuqori sifatli matolar va betakror naqshlarni yuksak nafosat bilan uyg'unlashtiraman.",
+desc2: "O'lkamizning betakror tabiati va boy madaniy merosidan ilhomlangan holda, o'z ishlarimga nafis kompozitsiyalar va milliy ruhdagi o'ziga xos vizual tasvirlarni singdiraman. Ishonchim komilki, haqiqiy go'zallik ortiqcha murakkablikni talab etmaydi — mehr bilan tikilgan bitta chok, yuksak did bilan tanlangan mato yoki nafis bichilgan shakl xonadoningizga butun bir iliqlik va shukuh olib kirishga qodir.",
     contactBtn: "Hamkorlik uchun bog'lanish"
   }, 
 
