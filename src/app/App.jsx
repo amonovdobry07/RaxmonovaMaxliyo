@@ -27,13 +27,13 @@ import 'aos/dist/aos.css'; // AOS CSS stillari
 
 i18n.use(initReactI18next).init({
   resources: {
-    uz: { translation: translationUz },
-    ru: { translation: translationRu },
-    en: { translation: translationEn },
-    tr: { translation: translationTr},
-    fr: { translation: translationFr},  
+    uz: { translation: translationUz }, // UZB o'rniga uz
+    ru: { translation: translationRu }, // RUS o'rniga ru
+    en: { translation: translationEn }, // ENG o'rniga en
+    tr: { translation: translationTr }, // TUR o'rniga tr
+    fr: { translation: translationFr }, // FRA o'rniga fr
   },
-  lng: "uz", 
+  lng: "uz", // Standart til ham uz bo'ladi
   fallbackLng: "uz", 
   interpolation: {
     escapeValue: false 

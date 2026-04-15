@@ -1,45 +1,43 @@
-import React, { useEffect } from 'react'; // useEffect qo'shildi
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'; // <-- Tarjima kiritildi
 import { MarketsList } from '../data/MarketPlaceData';
 import '../assets/styles/MarketPlace.css';
 
-// AOS kutubxonasi va uning stillari chaqirildi
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const MarketPlace = () => {
-  // AOS ni ishga tushirish uchun useEffect qo'shildi
+  const { t } = useTranslation(); // <-- t() funksiyasini chaqiramiz
+
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animatsiya tezligi (millisekundda)
-      once: true, // Animatsiya faqat bir marta ishlashi uchun
-      offset: 100, // Ekranda qancha ko'ringanda ishlashni boshlashi
+      duration: 800,
+      once: true,
+      offset: 100,
     });
   }, []);
 
   return (
     <section className="premium-hub-section">
-      <div className="premium-hub-bg"></div> {/* Orqa fon uchun naqsh/gradient */}
+      <div className="premium-hub-bg"></div>
       
       <div className="premium-hub-container">
-        {/* Sarlavhaga fade-down animatsiyasi qo'shildi */}
         <div className="premium-hub-header" data-aos="fade-down">
-          <h2>Xaridlarni o'zingizga qulay<br/>platformada amalga oshiring</h2>
-          <p>O'zingiz yoqtirgan internet magazindan buyurtma bering va uyingizgacha yetkazib berishlaridan rohatlaning.</p>
+          {/* Tarjima funksiyasidan foydalanamiz */}
+          <h2>{t('marketplace.title')}</h2>
+          <p>{t('marketplace.subtitle')}</p>
         </div>
 
-        {/* Bento-Grid uslubidagi zamonaviy kartalar */}
         <div className="bento-cards-grid">
-          {/* map ichiga index qo'shildi, delay uchun */}
           {MarketsList.map((market, index) => (
             <Link 
               to={`/market-place/${market.id}`} 
               key={market.id} 
               className="bento-card"
               data-aos="fade-up" 
-              data-aos-delay={index * 150} // Har bir karta bir oz kechikib, navbat bilan chiqadi
+              data-aos-delay={index * 150}
             >
-              {/* Hover bo'lganda orqa fonda magazin rangida nur (glow) yonadi */}
               <div 
                 className="bento-glow" 
                 style={{ backgroundColor: market.bgColor }}
@@ -53,8 +51,7 @@ const MarketPlace = () => {
                 <div className="bento-text">
                   <h3>{market.name}</h3>
                   <span className="bento-link-text">
-                    Mahsulotlarni ko'rish
-                    {/* Silliq chiquvchi o'q belgisi */}
+                    {t('marketplace.viewProducts')}
                     <svg className="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>

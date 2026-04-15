@@ -1,53 +1,51 @@
-import React, { useEffect } from "react"; // useEffect qo'shildi
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next"; // <-- Tarjima kiritildi
 import "../assets/styles/About.css"; 
 
 import video from "../assets/images/video/video.mp4";
 
-// AOS kutubxonasi va stillari chaqirildi
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const About = () => {
-  // AOS ni ishga tushirish
+  const { t } = useTranslation(); // <-- t() funksiyasini chaqiramiz
+
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animatsiya tezligi
-      once: true,    // Faqat bir marta ishlaydi
-      offset: 50,    // Animatsiya ekranda paydo bo'lish darajasi
+      duration: 800, 
+      once: true,    
+      offset: 50,    
     });
   }, []);
 
   return (
     <div className="about-page">
-      {/* Tepadagi katta sarlavha qismi - TEPADAN TUSHADI */}
       <section className="about-header">
-        <h1 className="about-title" data-aos="fade-down">RAHMANOVA MAXLIYO</h1>
+        <h1 className="about-title" data-aos="fade-down">{t('about.headerName')}</h1>
       </section>
 
-      {/* =======================================
-          CHEKSIZ AYLANUVCHI YULDUZLI MATN (MARQUEE)
-          Bu qismga AOS qo'shilmadi, chunki o'zi harakatda.
-          ======================================= */}
+      {/* Cheksiz aylanuvchi matn */}
       <div className="marquee-container">
         <div className="marquee-track">
+          {/* 4 marta takrorlangan, shuning uchun 4 marta tarjimani chaqiramiz */}
           <span className="marquee-text">
-            Organic Forms &nbsp; ★ &nbsp; Scotland-Based Artist &nbsp; ★ &nbsp; Botanical Art &nbsp; ★ &nbsp;
+            {t('about.marquee')} &nbsp; ★ &nbsp;
           </span>
           <span className="marquee-text">
-            Organic Forms &nbsp; ★ &nbsp; Scotland-Based Artist &nbsp; ★ &nbsp; Botanical Art &nbsp; ★ &nbsp;
+            {t('about.marquee')} &nbsp; ★ &nbsp;
           </span>
           <span className="marquee-text">
-            Organic Forms &nbsp; ★ &nbsp; Scotland-Based Artist &nbsp; ★ &nbsp; Botanical Art &nbsp; ★ &nbsp;
+            {t('about.marquee')} &nbsp; ★ &nbsp;
           </span>
           <span className="marquee-text">
-            Organic Forms &nbsp; ★ &nbsp; Scotland-Based Artist &nbsp; ★ &nbsp; Botanical Art &nbsp; ★ &nbsp;
+            {t('about.marquee')} &nbsp; ★ &nbsp;
           </span>
         </div>
       </div>
 
       <div className="portfolio-container">
         <div className="portfolio-wrapper">
-          {/* Chap tomon: Video qismi - CHAPDAN CHIQADI */}
+          
           <div className="image-section" data-aos="fade-right">
             <div className="image-border">
               <video
@@ -63,35 +61,19 @@ const About = () => {
             </div>
           </div>
 
-          {/* O'ng tomon: Matn qismi */}
           <div className="content-section">
-            {/* Sarlavha PASTDAN CHIQADI */}
-            <h1 className="hero-text" data-aos="fade-up">Men Mahliyo</h1>
+            <h1 className="hero-text" data-aos="fade-up">{t('about.heroTitle')}</h1>
 
-            {/* Matn PASTDAN, BIROZ KECHIKIB CHIQADI */}
             <div className="description" data-aos="fade-up" data-aos-delay="150">
-              <p>
-                Mening ishim React yordamida yozilgan toza arxitektura va
-                fototahrirdagi sehrli realizm elementlarini birlashtirib,
-                mantiqiy kod va vizual san'at o'rtasida mukammal uyg'unlikni
-                hosil qiladi.
-              </p>
-              <p>
-                Atrofimdagi boy muhit va raqamli ijodning cheksiz
-                imkoniyatlaridan ilhomlangan holda, loyihalarimga ko'pincha
-                interaktiv elementlar, nafis kompozitsiyalar va o'ziga xos
-                vizual hikoyalarni olib kiraman. Ishonamanki, ta'sirchan loyiha
-                o'ta murakkab bo'lishi shart emas — to'g'ri ishlangan bitta
-                komponent, nozik vizual detal yoki mukammal yozilgan birgina kod
-                qatori butun boshli voqeani so'zlab bera oladi.
-              </p>
+              <p>{t('about.desc1')}</p>
+              <p>{t('about.desc2')}</p>
             </div>
 
-            {/* Tugma eng oxirida, PASTDAN CHIQADI */}
             <button className="contact-button" data-aos="fade-up" data-aos-delay="300">
-              Men bilan bog'laning
+              {t('about.contactBtn')}
             </button>
           </div>
+          
         </div>
       </div>
     </div>

@@ -9,10 +9,10 @@ const Footer = () => {
         
         {/* 1. Ijtimoiy tarmoqlar (Social Icons) */}
         <div className="flex items-center gap-6 text-gray-800">
-          <a href="#" className="hover:text-blue-400 transition-colors" aria-label="Twitter">
+          <a href="https://www.instagram.com/rayhona_atelie/"  target='__blank'  className="hover:text-blue-400 transition-colors" aria-label="Twitter">
             <FaInstagram size={18} />
           </a>
-          <a href="#" className="hover:text-blue-600 transition-colors" aria-label="Facebook">
+          <a href="https://t.me/+tvRU4Aklc4UxZmUy" target='__blank' className="hover:text-blue-600 transition-colors" aria-label="Facebook">
             <FaTelegram size={18} />
           </a>
         </div>

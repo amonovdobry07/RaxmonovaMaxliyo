@@ -12,78 +12,18 @@ import maxsulotlar_photo_11 from "../assets/images/Maxsulotlar/maxsulotlar_photo
 import maxsulotlar_photo_12 from "../assets/images/Maxsulotlar/maxsulotlar_photo_12.jpg";
 
 const ProductsSection = [
-  {
-    id: 1,
-    image: maxsulotlar_photo_1,
-    title: "Milliy Naqshli Ko'rpa",
-    price: "$85.00",
-  },
-  {
-    id: 2,
-    image: maxsulotlar_photo_2,
-    title: "Adras Yostiq Jildi",
-    price: "$25.00",
-  },
-  {
-    id: 3,
-    image: maxsulotlar_photo_3,
-    title: "Samarqand Uslubidagi Gilamcha",
-    price: "$120.00",
-  },
-  {
-    id: 4,
-    image: maxsulotlar_photo_4,
-    title: "Qo'l Mehnati Dasturxon",
-    price: "$45.00",
-  },
-  {
-    id: 5,
-    image: maxsulotlar_photo_5,
-    title: "Zardo'zi Bezakli Quti",
-    price: "$60.00",
-  },
-  {
-    id: 6,
-    image: maxsulotlar_photo_6,
-    title: "Buxoro Suzanisi",
-    price: "$150.00",
-  },
-  {
-    id: 7,
-    image: maxsulotlar_photo_7,
-    title: "Velor Yostig'i",
-    price: "$35.00",
-  },
-  {
-    id: 8,
-    image: maxsulotlar_photo_8,
-    title: "Xorazm Naqshli Ko'rpacha",
-    price: "$95.00",
-  },
-  {
-    id: 9,
-    image: maxsulotlar_photo_9,
-    title: "Ikat Uslubidagi Sumka",
-    price: "$50.00",
-  },
-  {
-    id: 10,
-    image: maxsulotlar_photo_10,
-    title: "Milliy Chopon",
-    price: "$200.00",
-  },
-  {
-    id: 11,
-    image: maxsulotlar_photo_11,
-    title: "Ipak Ro'mol",
-    price: "$30.00",
-  },
-  {
-    id: 12,
-    image: maxsulotlar_photo_12,
-    title: "Dekorativ Devoriy Bezak",
-    price: "$80.00",
-  },
+  { id: 1, image: maxsulotlar_photo_1, titleKey: "products.items.item1", price: "$85.00" },
+  { id: 2, image: maxsulotlar_photo_2, titleKey: "products.items.item2", price: "$25.00" },
+  { id: 3, image: maxsulotlar_photo_3, titleKey: "products.items.item3", price: "$120.00" },
+  { id: 4, image: maxsulotlar_photo_4, titleKey: "products.items.item4", price: "$45.00" },
+  { id: 5, image: maxsulotlar_photo_5, titleKey: "products.items.item5", price: "$60.00" },
+  { id: 6, image: maxsulotlar_photo_6, titleKey: "products.items.item6", price: "$150.00" },
+  { id: 7, image: maxsulotlar_photo_7, titleKey: "products.items.item7", price: "$35.00" },
+  { id: 8, image: maxsulotlar_photo_8, titleKey: "products.items.item8", price: "$95.00" },
+  { id: 9, image: maxsulotlar_photo_9, titleKey: "products.items.item9", price: "$50.00" },
+  { id: 10, image: maxsulotlar_photo_10, titleKey: "products.items.item10", price: "$200.00" },
+  { id: 11, image: maxsulotlar_photo_11, titleKey: "products.items.item11", price: "$30.00" },
+  { id: 12, image: maxsulotlar_photo_12, titleKey: "products.items.item12", price: "$80.00" },
 ];
 
-export default ProductsSection
+export default ProductsSection;

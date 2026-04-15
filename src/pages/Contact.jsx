@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import '../assets/styles/Contact.css'; // CSS faylini ulash
+import { useTranslation } from 'react-i18next'; // <-- Tarjima hook'i qo'shildi
+import '../assets/styles/Contact.css'; 
 
 const Contact = () => {
+  const { t } = useTranslation(); // <-- t() funksiyasini chaqiramiz
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -13,6 +16,7 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  // Telefon raqami formati va 12 belgilik cheklov saqlab qolindi
   const handlePhoneChange = (e) => {
     const value = e.target.value.replace(/[^0-9+]/g, '');
     if (value.length <= 12) {
@@ -23,10 +27,12 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const targetEmail = "example@gmail.com"; 
-    const subject = encodeURIComponent("Veb-saytdan yangi xabar");
+    const targetEmail = "raykhon.textile@gmail.com"; 
+    
+    // Elektron pochtaga ketadigan xabar ham tarjimaga moslandi
+    const subject = encodeURIComponent(t('contact.emailSubject'));
     const body = encodeURIComponent(
-      `Ism: ${formData.name}\nTelefon: ${formData.phone}\n\nXabar:\n${formData.message}`
+      `${t('contact.nameLabel')}: ${formData.name}\n${t('contact.phoneLabel')}: ${formData.phone}\n\n${t('contact.messageLabel')}:\n${formData.message}`
     );
 
     const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${subject}&body=${body}`;
@@ -41,50 +47,50 @@ const Contact = () => {
         
         {/* Chap qism: Contact Form */}
         <div className="contact-form-section">
-          <h2 className="contact-title">Biz bilan bog'laning</h2>
+          <h2 className="contact-title">{t('contact.title')}</h2>
           <p className="contact-subtitle">
-            Savollaringiz bo'lsa, quyidagi forma orqali bizga xabar yuboring. Tez orada siz bilan bog'lanamiz.
+            {t('contact.subtitle')}
           </p>
 
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-group">
-              <label>Ismingiz</label>
+              <label>{t('contact.nameLabel')}</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Ali Valiyev"
+                placeholder={t('contact.namePlaceholder')}
               />
             </div>
 
             <div className="form-group">
-              <label>Telefon raqamingiz (Maks 12 belgi)</label>
+              <label>{t('contact.phoneLabel')}</label>
               <input
                 type="text"
                 name="phone"
                 value={formData.phone}
                 onChange={handlePhoneChange}
                 required
-                placeholder="+99890123456"
+                placeholder={t('contact.phonePlaceholder')}
               />
             </div>
 
             <div className="form-group">
-              <label>Xabaringiz</label>
+              <label>{t('contact.messageLabel')}</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
                 rows="4"
-                placeholder="Shu yerga yozing..."
+                placeholder={t('contact.messagePlaceholder')}
               ></textarea>
             </div>
 
             <button type="submit" className="submit-btn">
-              Xabarni Gmail orqali yuborish
+              {t('contact.submitBtn')}
             </button>
           </form>
         </div>
@@ -92,8 +98,8 @@ const Contact = () => {
         {/* O'ng qism: Xarita */}
         <div className="contact-map-section">
           <iframe
-            title="Kompaniya manzili"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98139.73691652496!2d66.89279768997388!3d39.65487770000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d191960077df7%3A0x487636d9d13f2f57!2sSamarkand%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+            title={t('contact.mapTitle')}
+            src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d6157.401706365908!2d64.791669!3d39.498669!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDI5JzU1LjIiTiA2NMKwNDcnMzAuMCJF!5e0!3m2!1sru!2s!4v1776250171854!5m2!1sru!2s"
             width="100%"
             height="100%"
             style={{ border: 0 }}
