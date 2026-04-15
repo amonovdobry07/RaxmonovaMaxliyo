@@ -6,12 +6,13 @@
 }
 
 .about-title {
-  font-family: 'Garamond', 'Times New Roman', serif;
   font-size: 6rem;
   font-weight: 400;
   color: #000;
   margin: 0;
   letter-spacing: 2px;
+  font-family: "Poiret One", sans-serif !important;
+  font-weight: 700 !important;
 }
 
 /* =======================================
@@ -32,7 +33,7 @@
 .marquee-track {
   display: inline-block;
   /* Animatsiya nomi: marqueeScroll, Davomiyligi: 25 soniya, Bir xil tezlikda (linear), Cheksiz (infinite) */
-  animation: marqueeScroll 25s linear infinite; 
+  animation: marqueeScroll 25s linear infinite;
 }
 
 /* Animatsiya ustiga sichqoncha borganda to'xtashini istasangiz shu qatorni qo'shing: */
@@ -41,9 +42,12 @@
 } */
 
 .marquee-text {
-  font-family: 'Garamond', 'Times New Roman', serif; /* Yoki o'zingizning shriftingiz */
+  font-family:
+    "Garamond", "Times New Roman", serif; /* Yoki o'zingizning shriftingiz */
   font-size: 1.2rem;
   letter-spacing: 1.5px;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 /* Animatsiya harakati */
@@ -52,7 +56,9 @@
     transform: translateX(0); /* Boshlang'ich nuqta */
   }
   100% {
-    transform: translateX(-50%); /* Matnning teng yarmi o'tganda yana boshidan aylanishni boshlaydi */
+    transform: translateX(
+      -50%
+    ); /* Matnning teng yarmi o'tganda yana boshidan aylanishni boshlaydi */
   }
 }
 
@@ -66,120 +72,128 @@
   }
 }
 
-
-
 /* Google Fonts ulash (buni index.css ga ham qo'shsa bo'ladi) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap");
 
 :root {
-    --bg-color: #f7f3f0; /* Rasmdagi och krem rang */
-    --text-black: #1a1a1a;
-    --text-muted: #333333;
-    --white: #ffffff;
+  --bg-color: #f7f3f0; /* Rasmdagi och krem rang */
+  --text-black: #1a1a1a;
+  --text-muted: #333333;
+  --white: #ffffff;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .portfolio-container {
-    background-color: var(--bg-color);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-family: "Inter", sans-serif;
 }
 
 .portfolio-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Ikki ustunli tuzilish */
-    gap: 80px;
-    align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Ikki ustunli tuzilish */
+  gap: 80px;
+  align-items: center;
 }
 
 /* Rasm tarafi */
 .image-section {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .image-border {
-    background-color: var(--white);
-    padding: 15px; /* Oq ramka */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background-color: var(--white);
+  padding: 15px; /* Oq ramka */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .profile-img {
-    display: block;
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
 }
 
 /* Matn tarafi */
 .content-section {
-    padding-right: 40px;
+  padding-right: 40px;
 }
 
 .hero-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    line-height: 1.2;
-    font-weight: 400;
-    color: var(--text-black);
-    margin-bottom: 40px;
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--text-black);
+  margin-bottom: 40px;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .description {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;  
 }
 
 .description p {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .contact-button {
-    margin-top: 20px;
-    background-color: #333333;
-    color: white;
-    border: none;
-    padding: 16px 45px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  margin-top: 20px;
+  background-color: #333333;
+  color: white;
+  border: none;
+  padding: 16px 45px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;  
 }
 
 .contact-button:hover {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 /* Mobil moslashuvchanlik (Responsive) */
 @media (max-width: 968px) {
-    .portfolio-wrapper {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: left;
-    }
+  .portfolio-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: left;
+  }
 
-    .image-section {
-        order: 1;
-    }
+  .image-section {
+    order: 1;
+  }
 
-    .content-section {
-        order: 2;
-        padding-right: 0;
-    }
+  .content-section {
+    order: 2;
+    padding-right: 0;
+  }
 
-    .hero-text {
-        font-size: 2rem;
-    }
+  .hero-text {
+    font-size: 2rem;
+  }
 }

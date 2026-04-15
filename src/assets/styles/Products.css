@@ -4,6 +4,8 @@
 .premium-products-section {
   padding: 6rem 4rem;
   background-color: #fbfbfb; /* Ko'zni charchatmaydigan ochiq kulrang/oq fon */
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .premium-header {
@@ -12,11 +14,12 @@
 }
 
 .premium-header h2 {
-  font-family: 'Lora', serif;
   font-size: 3.2rem;
   font-weight: 400;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .premium-header p {
@@ -24,6 +27,8 @@
   font-size: 1.1rem;
   color: #666;
   letter-spacing: 0.5px;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 /* =========================================
@@ -100,6 +105,8 @@
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.3;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .premium-price {

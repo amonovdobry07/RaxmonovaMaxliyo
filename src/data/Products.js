@@ -19,7 +19,6 @@ const ProductsSection = [
   { id: 5, image: maxsulotlar_photo_5, titleKey: "products.items.item5", price: "$60.00" },
   { id: 6, image: maxsulotlar_photo_6, titleKey: "products.items.item6", price: "$150.00" },
   { id: 7, image: maxsulotlar_photo_7, titleKey: "products.items.item7", price: "$35.00" },
-  { id: 8, image: maxsulotlar_photo_8, titleKey: "products.items.item8", price: "$95.00" },
   { id: 9, image: maxsulotlar_photo_9, titleKey: "products.items.item9", price: "$50.00" },
   { id: 10, image: maxsulotlar_photo_10, titleKey: "products.items.item10", price: "$200.00" },
   { id: 11, image: maxsulotlar_photo_11, titleKey: "products.items.item11", price: "$30.00" },

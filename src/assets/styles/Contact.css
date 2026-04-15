@@ -38,6 +38,8 @@
   margin-bottom: 15px;
   letter-spacing: -0.5px;
   position: relative;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 /* Headerdagi "Aloqa" tagidagi chiziqqa o'xshash effekt */
@@ -56,6 +58,8 @@
   margin-bottom: 45px;
   line-height: 1.6;
   font-weight: 300;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 /* Forma elementlari */
@@ -71,6 +75,8 @@
   color: #999;
   margin-bottom: 10px;
   display: block;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .form-group input,
@@ -85,6 +91,8 @@
   border-radius: 0;
   outline: none;
   transition: border-color 0.3s ease;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .form-group input:focus,
@@ -106,6 +114,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 20px;
+   font-family: "Poiret One", sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .submit-btn:hover {
